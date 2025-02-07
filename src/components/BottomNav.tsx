@@ -1,6 +1,6 @@
 
 import { Link, useLocation } from "react-router-dom";
-import { PiggyBank, CreditCard, Wallet } from "lucide-react";
+import { PiggyBank, CreditCard, UsersRound } from "lucide-react";
 
 export const BottomNav = () => {
   const location = useLocation();
@@ -21,26 +21,26 @@ export const BottomNav = () => {
         <span className="text-xs">Savings</span>
       </Link>
       <Link
-        to="/spending"
+        to="/finance"
         className={`flex flex-col items-center space-y-1 ${
-          isActive("/spending")
+          isActive("/finance")
             ? "text-primary"
             : "text-gray-500 hover:text-primary transition-colors"
         }`}
       >
         <CreditCard size={24} />
-        <span className="text-xs">Spending</span>
+        <span className="text-xs">Finance</span>
       </Link>
       <Link
-        to="/lending"
+        to="/borrowing"
         className={`flex flex-col items-center space-y-1 ${
-          isActive("/lending")
+          isActive("/borrowing")
             ? "text-primary"
             : "text-gray-500 hover:text-primary transition-colors"
         }`}
       >
-        <Wallet size={24} />
-        <span className="text-xs">Lending</span>
+        <UsersRound size={24} />
+        <span className="text-xs">Borrowing</span>
       </Link>
     </nav>
   );

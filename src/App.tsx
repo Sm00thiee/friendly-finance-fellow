@@ -6,8 +6,9 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Savings from "./pages/Savings";
-import Spending from "./pages/Spending";
-import Lending from "./pages/Lending";
+import SpendingAndLending from "./pages/SpendingAndLending";
+import Borrowing from "./pages/Borrowing";
+import Auth from "./pages/Auth";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,9 +21,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/auth" element={<Auth />} />
           <Route path="/savings" element={<Savings />} />
-          <Route path="/spending" element={<Spending />} />
-          <Route path="/lending" element={<Lending />} />
+          <Route path="/finance" element={<SpendingAndLending />} />
+          <Route path="/borrowing" element={<Borrowing />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
